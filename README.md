@@ -1,7 +1,7 @@
-#ChickenVision Examples
+# ChickenVision Examples
 Included in this branch are a series of example projects demonstrating ChickenVision.
 
-##Project Descriptions
+## Project Descriptions
 
 * proceduralTrackerExample- an example that uses ChickenVision to demonstrate how one would go about making a tracking program to track retroreflective tape. You can run it but note that the hardcoded vaues won't work as they were determined by tracking a random object-ie my phone with a green background. As such comment out the HSVFilter and both the narrowContours and uncomment the "for sliders" lines.
 
