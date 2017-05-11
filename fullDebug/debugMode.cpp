@@ -1,3 +1,10 @@
+/*
+ * debugMode.cpp
+ *
+ *  Created on: May 5, 2017
+ *  Author: Stephen Stockman
+ *  ThunderChicken Alumni Invent Libraries (TAIL)
+ */
 #include "ChickenVision/HSVThresh.h"
 #include "ChickenVision/Smoothing.h"
 #include "ChickenVision/Tracking.h"

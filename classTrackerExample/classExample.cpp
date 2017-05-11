@@ -1,3 +1,10 @@
+/*
+ * classExample.cpp
+ *
+ *  Created on: May 5, 2017
+ *  Author: Stephen Stockman
+ *  ThunderChicken Alumni Invent Libraries (TAIL)
+ */
 #include "Tracking.h"
 #include "Smoothing.h"
 #include "VisionProcessing.h"
