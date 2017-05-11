@@ -16,7 +16,7 @@ Download folder and place in stored location.
 ### Prerequisites
 
 * Windows 10
-* Eclipse Luna,Mars, or Neon <link> <https://www.eclipse.org/downloads/>
+* Eclipse Neon <link> <https://www.eclipse.org/downloads/>
 * minGW-w64 <link><https://sourceforge.net/projects/mingw-w64/>
 * cMake current version Windows win64-x64 Installer.msi <link> <https://cmake.org/download/>
 * OpenCV 3.2.0 <link> <https://sourceforge.net/projects/opencvlibrary/files/opencv-win/3.2.0/opencv-3.2.0-vc14.exe/download>
