@@ -16,21 +16,34 @@ Download folder and place in stored location.
 ### Prerequisites
 
 * Windows 10
-* Eclipse Luna,Mars, or Neon
-* mingw64
-* OpenCV 3.2.0
-* ChickenVision Folder
+* Eclipse Luna,Mars, or Neon <link> <https://www.eclipse.org/downloads/>
+* minGW-w64 <link><https://sourceforge.net/projects/mingw-w64/>
+* cMake current version Windows win64-x64 Installer.msi <link> <https://cmake.org/download/>
+* OpenCV 3.2.0 <link> <https://sourceforge.net/projects/opencvlibrary/files/opencv-win/3.2.0/opencv-3.2.0-vc14.exe/download>
+* ChickenVision Folder and archive folder
 
 
 ### Installing
 
-A step by step series of examples that tell you have to get a development env running
-
-End with an example of getting some data out of the system or using it for a little demo
+Video of setup by some guy on YouTube in case you want it <link> <https://www.youtube.com/watch?v=BBamKg5_JKI>
+* Run eclipse installer and install Eclipse for C++
+* Run minGW-w64 installer and for Architecture select x86_64 "NOT i686"
+* Now set the env var for minGW- System->Advanced System Settings->Environment Variables
+* Go to System variables and double click PATH->New-> and type C:\Program Files\mingw-w64\x86_64-7.1.0-posix-seh-rt_v5-rev0\mingw64\bin (this should be the directory to your mingw-w64 bin folder so confirm its in the correct location and modify as needed)
+* Run OpenCV installer and place somewhere that you can easily find but never plan to move( I reccomend either extract to C:\ or in C:\Users\username\ )
+* Run CMake installer and install cMake. Run it.
+* Select Browse sources and navigate to the opencv/sources/ folder. Select Browse Build and create a new folder in opencv/ called mybuild.
+* Click Configure for the generator select Eclipse CDT4-MinGW Makefiles and wait for it to finish then click generate(note its okay that some tests failed)
+* Open Eclipse adn File-> import-> existing project into workspace. For root director selct the mybuild folder you just generated and make sure the box with the project name is checked. Also ensure all of the Options and Working set boxes are unchecked.
+* Wait for the c++ indexer to finish(lower right hand corner should take a couple minutes) then left click the project and select Build all, this will take a long time(30 minutes-1 hour).
+* Then right click the imported project Build Targets-> Build scroll to the bottom-> :install. This will create the opencv/mybuild/install/ folder and files.
 
 ## Deployment
+Below I outline how to use it on a windows machine in Eclipse for development purposes and how to use it on the raspberry pi.
 
-Add additional notes about how to deploy this on a live system
+### Windows Eclipse
+
+### Raspberry Pi
 
 ## Authors
 
