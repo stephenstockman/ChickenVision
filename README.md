@@ -1,0 +1,2 @@
+# ChickenVision
+Very basic collection of functions and classes used in vision processing utilizing OpenCV 3.2 created to be utilized by FRC Team 217 the ThunderChickens. Features include: 1.) Redifining useful OpenCV functions and eliminating extraneous parameters 2.) Combine common OpenCV code into a class or method 3.) Create dynamic GUI control for use in debugging 4.) Contain example code in both procedural and object-oriented fashion
