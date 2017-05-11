@@ -11,7 +11,7 @@ Very basic collection of functions and classes used in vision processing utilizi
 
 ## Getting Started
 
-Download folder and place in stored location.
+Although the code found in this repo can be used in anything that supports C++ i.e any IDE for development or any microprocessor that supports OpenCV 3.2 I will only explicitly outline thesetup for Eclipse on Windows. This is because it is the primary IDE and OS used in FRC development. I will also outline setup on a microprocessor for use in competition in this case that would be the raspberry pi. Please note that you can use any microprocessor that supports OpenCV 3.2 but the raspberry pi is a fairly common one in recent years.
 
 ### Prerequisites
 
@@ -23,7 +23,7 @@ Download folder and place in stored location.
 * ChickenVision Folder and archive folder
 
 
-### Installing
+### Setup on Windows with Eclipse C/C++ IDE
 
 Video of setup by some guy on YouTube in case you want it <link> <https://www.youtube.com/watch?v=BBamKg5_JKI>
 * Run eclipse installer and install Eclipse for C++
@@ -37,11 +37,19 @@ Video of setup by some guy on YouTube in case you want it <link> <https://www.yo
 * Open Eclipse adn File-> import-> existing project into workspace. For root director selct the mybuild folder you just generated and make sure the box with the project name is checked. Also ensure all of the Options and Working set boxes are unchecked.
 * Wait for the c++ indexer to finish(lower right hand corner should take a couple minutes) then left click the project and select Build all, this will take a long time(30 minutes-1 hour).
 * Then right click the imported project Build Targets-> Build scroll to the bottom-> :install. This will create the opencv/mybuild/install/ folder and files.
+* Congradulations you are done with the setup time to make a new project(go to Development/Testing->Windows Eclipse found below). After restarting your computer, you can start coding in OpenCV! Next we will outline how to get the code from here into your project.
 
-## Deployment
+* First download
+*  TODO: Talk about setting env var for DIR
+
+### Setup on Raspberry Pi
+
+## Development/Testing
 Below I outline how to use it on a windows machine in Eclipse for development purposes and how to use it on the raspberry pi.
 
 ### Windows Eclipse
+* Create your project. In Eclipse file->new->project->C/C++->C++ Project. Give it a name and select Executable/Empty Project for the project type and for the toolchain select MinGW GCC.
+*
 
 ### Raspberry Pi
 
