@@ -34,8 +34,8 @@ Add additional notes about how to deploy this on a live system
 
 ## Authors
 
-* **Stephen Stockman**
+**Stephen Stockman**
 
 ## Acknowledgments
 
-* Good luck fellow ThunderChicken Programmers may your exposure be set to low and your camera calibration go well
+Good luck fellow ThunderChicken Programmers may your exposure be set to low and your camera calibration go well
