@@ -34,7 +34,7 @@ Add additional notes about how to deploy this on a live system
 
 ## Authors
 
-**Stephen Stockman**
+**Stephen Stockman** - ThunderChicken Programmer 2014-2016
 
 ## Acknowledgments
 
