@@ -1,10 +1,3 @@
-/*
- * proceduralExample.cpp
- *
- *  Created on: May 5, 2017
- *  Author: Stephen Stockman
- *  ThunderChicken Alumni Invent Libraries (TAIL)
- */
 #include "HSVThresh.h"
 #include "Smoothing.h"
 #include "Tracking.h"
@@ -32,38 +25,38 @@ int main()
 
 		// convert image from RGB colorspace to HSV colorspace
 		Mat hsv = RGB2HSV(source);
-		vp.showFrame(hsv,"hsv");
+		vp.showFrame(hsv, "hsv");
 
 		// blur image
 		Mat smooth = smoothAverage(hsv, 5);
-		vp.showFrame(smooth,"smooth");
+		vp.showFrame(smooth, "smooth");
 
 		// filter image to exclude parts not between the two scalars
-		Mat hsvFiltered = HSVFilter(smooth); // for sliders
-		//Mat hsvFiltered = HSVFilter(smooth, Scalar(29, 0, 60), Scalar(75, 255, 255)); // hard coded filter
+		//Mat hsvFiltered = HSVFilter(smooth); // for sliders
+		Mat hsvFiltered = HSVFilter(smooth, Scalar(29, 0, 60),Scalar(75, 255, 255)); // hard coded filter
 		vp.showFrame(hsvFiltered, "hsvFiltered");
 
 		// find contour
 		vector<vector<Point> > contours = getContours(hsvFiltered);
 
 		// narrow contours
-		contours = narrowContours(contours, AREA, Point(2000,10000));
-		//contours = narrowContours(contours, ASPECT_RATIO, Point(1,2));
-		//contours = narrowContours(contours, EXTENT, Point(0,4));// really 0.0 and 0.4
-		//contours = narrowContours(contours, ORIENTATION, Point(-15,15));// kinda buggy
-
+		//contours = narrowContours(contours, AREA);//for sliders
+		contours = narrowContours(contours, AREA, Point(2000, 30000));// hard coded filter
 
 		// find rectangle surrounding contour with largest area
-		Rect bounding_rect = boundRectContour(contours,MAX_AREA);
-		Mat area = drawRect(source, bounding_rect,Scalar(50,200,10));
-		vp.showFrame(area,"area");
+		Rect bounding_rect = boundRectContour(contours, MAX_AREA);
+		Mat area = drawRect(source, bounding_rect, Scalar(50, 200, 10));
+		vp.showFrame(area, "area");
 
 		// find rectangle satisfying area and AR restraints
 		source = vp.getFrame();
-		contours = narrowContours(contours, ASPECT_RATIO, Point(1,2));
-		Rect boundingCRect = boundRectContour(contours,MAX_AREA);
-		Mat areaAR = drawRect(source, boundingCRect,Scalar(150,10,10));
-		vp.showFrame(areaAR,"areaAR");
+		//contours = narrowContours(contours, ASPECT_RATIO);// for sliders
+		contours = narrowContours(contours, ASPECT_RATIO, Point(1, 2));	// hard coded filter
+
+		// find rectangle surrounding contour with largest area
+		Rect boundingCRect = boundRectContour(contours, MAX_AREA);
+		Mat areaAR = drawRect(source, boundingCRect, Scalar(150, 10, 10));
+		vp.showFrame(areaAR, "areaAR");
 
 		// stop camera when key 'c' is pressed
 		// MANDATORY in all programs bc of waitKey

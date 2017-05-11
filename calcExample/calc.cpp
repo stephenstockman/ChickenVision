@@ -1,10 +1,3 @@
-/*
- * calc.cpp
- *
- *  Created on: May 5, 2017
- *  Author: Stephen Stockman
- *  ThunderChicken Alumni Invent Libraries (TAIL)
- */
 #include "ChickenVision/HSVThresh.h"
 #include "ChickenVision/Smoothing.h"
 #include "ChickenVision/Tracking.h"
@@ -34,8 +27,8 @@ int main()
 		vp.showFrame(hsv, "hsv");
 
 		// filter image to exclude parts not between the two scalars
-		//Mat hsvFiltered = HSVFilter(hsv); // for sliders
-		Mat hsvFiltered = HSVFilter(hsv, Scalar(0, 0, 193), Scalar(84, 255, 255)); // hard coded filter
+		Mat hsvFiltered = HSVFilter(hsv); // for sliders
+		//Mat hsvFiltered = HSVFilter(hsv, Scalar(0, 0, 193), Scalar(84, 255, 255)); // hard coded filter
 		vp.showFrame(hsvFiltered, "hsvFiltered");
 
 		// find contour
@@ -51,6 +44,7 @@ int main()
 		double angle = calculateAngle(distance);
 		cout << "Distance: "<<distance<< " Angle: "<< angle<<endl;
 
+		// convert pixel cooridinates to aiming coordinates
 		Point_<double> aim = P2ACoor(Point_<double>(bounding_rect.x,bounding_rect.y), Point_<double>(320,240), false);
 		cout << "x: "<< aim.x << " y: "<<aim.y<<endl;
 

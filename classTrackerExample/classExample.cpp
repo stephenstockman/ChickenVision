@@ -1,10 +1,3 @@
-/*
- * classExample.cpp
- *
- *  Created on: May 5, 2017
- *  Author: Stephen Stockman
- *  ThunderChicken Alumni Invent Libraries (TAIL)
- */
 #include "Tracking.h"
 #include "Smoothing.h"
 #include "VisionProcessing.h"
@@ -20,12 +13,12 @@ public:
 	Point nCritRange;
 	contourCriteria cCrit;
 
-	ObjectTracker(Point_<Scalar> hsvIn, narrowCriteria nCritIn,
-			Point_<int> nCritRangeIn, contourCriteria cCritIn) :
-			hsvRange(hsvIn), nCrit(nCritIn), nCritRange(nCritRangeIn), cCrit(
-					cCritIn)
-	{
-	}
+	// now obviously this is an awful object to make so dont use code like this
+	// limit the amount of parameters you need to create te object
+	// and make the rest variables that ou can access via member functions
+	// TODO: do this ^^ lol
+	ObjectTracker(Point_<Scalar> hsvIn, narrowCriteria nCritIn,Point_<int> nCritRangeIn, contourCriteria cCritIn) :
+			hsvRange(hsvIn), nCrit(nCritIn), nCritRange(nCritRangeIn), cCrit(cCritIn){}
 
 	Rect findObjectRect(Mat source)
 	{
@@ -45,18 +38,18 @@ public:
 	}
 
 	vector<vector<Point> > findObjectContours(Mat source)
-		{
-			// filter image to exclude parts not between the two scalars
-			Mat hsvFiltered = HSVFilter(source, hsvRange.x, hsvRange.y);
+	{
+		// filter image to exclude parts not between the two scalars
+		Mat hsvFiltered = HSVFilter(source, hsvRange.x, hsvRange.y);
 
-			// find contour
-			vector<vector<Point> > contours = getContours(hsvFiltered);
+		// find contour
+		vector<vector<Point> > contours = getContours(hsvFiltered);
 
-			// narrow contours
-			contours = narrowContours(contours, nCrit, nCritRange);
+		// narrow contours
+		contours = narrowContours(contours, nCrit, nCritRange);
 
-			return contours;
-		}
+		return contours;
+	}
 
 };
 
@@ -79,19 +72,18 @@ int main()
 		Mat hsv = RGB2HSV(source);
 
 		// track object to get rect
-		ObjectTracker objT(Point_<Scalar>(Scalar(29, 0, 60), Scalar(75, 255, 255)), AREA,
-				Point(2000, 15000), MAX_AREA);
+		ObjectTracker objT(Point_<Scalar>(Scalar(29, 0, 60), Scalar(75, 255, 255)), AREA,Point(2000, 15000), MAX_AREA);
 		Rect boundedRect = objT.findObjectRect(hsv);
-		Mat area = drawRect(source, boundedRect,Scalar(57, 255, 20));
-		vp.showFrame(area,"area");
+		Mat area = drawRect(source, boundedRect, Scalar(57, 255, 20));
+		vp.showFrame(area, "area");
 
 		// track object to get contours then narrow even more
 		source = vp.getFrame();
 		vector<vector<Point> > contours = objT.findObjectContours(hsv);
-		contours = narrowContours(contours, ASPECT_RATIO, Point(1,2));
+		contours = narrowContours(contours, ASPECT_RATIO, Point(1, 2));
 		Rect boundedCRect = boundRectContour(contours, MAX_AREA);
-		Mat areaAR = drawRect(source, boundedCRect,Scalar(200, 50, 50));
-		vp.showFrame(areaAR,"areaAR");
+		Mat areaAR = drawRect(source, boundedCRect, Scalar(200, 50, 50));
+		vp.showFrame(areaAR, "areaAR");
 
 		// stop camera when key 'c' is pressed
 		// MANDATORY in all programs bc of waitKey

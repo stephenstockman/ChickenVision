@@ -1,10 +1,3 @@
-/*
- * debugMode.cpp
- *
- *  Created on: May 5, 2017
- *  Author: Stephen Stockman
- *  ThunderChicken Alumni Invent Libraries (TAIL)
- */
 #include "ChickenVision/HSVThresh.h"
 #include "ChickenVision/Smoothing.h"
 #include "ChickenVision/Tracking.h"
@@ -20,11 +13,13 @@ int main()
 
 	// set resolution of camera
 	vp.setResolution(320, 240);
+
 	while (true)
 	{
 		// create and get current image from camera
 		Mat source;
 		source = vp.getFrame();
+
 		// show current image from camera and name window source(src)
 		vp.showFrame(source, "src");
 
@@ -44,16 +39,15 @@ int main()
 
 		// filter image to exclude parts not between the two scalars
 		Mat hsvFiltered = HSVFilter(smooth); // for sliders
-		//Mat hsvFiltered = HSVFilter(smooth, Scalar(29, 0, 60), Scalar(75, 255, 255)); // hard coded filter
 		vp.showFrame(hsvFiltered, "hsvFiltered");
 
 		// find contour
 		vector<vector<Point> > contours = getContours(hsvFiltered);
 
 		// narrow contours
-		contours = narrowContours(contours, AREA,Point(1000,40000));
+		contours = narrowContours(contours, AREA);
 		contours = narrowContours(contours, ASPECT_RATIO);
-		//contours = narrowContours(contours, EXTENT,Point(0,8));
+		contours = narrowContours(contours, EXTENT);
 		contours = narrowContours(contours, ORIENTATION);
 
 		// find rectangle surrounding contour with largest area
