@@ -45,7 +45,7 @@ Video of setup by some guy on YouTube in case you want it <link> <https://www.yo
 ## Development/Testing
 Below I outline how to use it on a windows machine in Eclipse for development purposes and how to use it on the raspberry pi.
 
-### Windows Eclipse
+### Windows Eclipse-Must repeat for every new project
 * Create your project. In Eclipse file->new->project->C/C++->C++ Project. Give it a name and select Executable/Empty Project for the project type and for the toolchain select MinGW GCC.
 * Then click the big green clone/download button on this github and select download as zip. This will creat a ChickenVision-master.zip file.
 * In Eclipse select File->import->General/archive file. In From archive file: select browse and select ChickenVision-master.zip and in the Into folder: select browse and select the new project you just created.
@@ -53,6 +53,7 @@ Below I outline how to use it on a windows machine in Eclipse for development pu
 * Next go down to the MinGW C++ Linker and select Libraries. For the library search path(-L) click the same add icon and select filesystem to navigate to "C:\...\opencv\newbuild\install\x64\mingw\bin".
 * Then under Libraries(-l) click the green plus icon and add all these things seperately(yes i know its a pain)."libopencv_imgproc320","libopencv_highgui320","libopencv_video320","libopencv_core320","libopencv_videoio320","libopencv_imgcodecs320"
 * Now right click your project-> clean project, index project and build your project and you should be set to go. If the .h files are still red then just open up each file individually and ctrl+b to build it.
+* You are now set and ready to wite OpenCV code and use our code should you like to. Included in our example branch is a couple examples demonstrating ChickenVision, remember you have to walk through this exact same process outlined above before you can run the examples. Descriptions of each example is outlined in the ReadMe in the Examples branch.
 
 ### Raspberry Pi
 
@@ -62,4 +63,4 @@ Below I outline how to use it on a windows machine in Eclipse for development pu
  
 ## Acknowledgments
 
-Good luck fellow ThunderChicken Programmers may your exposure be set to low and your camera calibration go well
+Good luck fellow ThunderChicken Programmers may your exposure be set to low and your camera calibration go well!
