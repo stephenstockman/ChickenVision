@@ -1,6 +1,6 @@
 # ChickenVision
 
-Very basic collection of functions and classes used in vision processing utilizing OpenCV 3.2 created to be used by FRC Team 217 the ThunderChickens. 
+Very basic collection of functions and classes used in vision processing utilizing OpenCV 3.2 created to be used and modified by FRC Team 217 the ThunderChickens. 
 
 ## Features
 
