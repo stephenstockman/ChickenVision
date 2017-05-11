@@ -8,13 +8,15 @@
 #ifndef CHICKENVISION_CALCULATION_H_
 #define CHICKENVISION_CALCULATION_H_
 #include <math.h>;
-#define PI 3.14159265
+
+using namespace cv;
 
 // YOU MUST CHANGE THESE CONSTANTS
 double FOCAL = 309;// Focal = (measurementPixels*distance2ObjectParallel2Ground)/(measurementObject)
 double HEIGHT_OBJECT = 6;// irl measurement
 double CAMERA_HEIGHT = 26;// irl measurment
 double TARGET_HEIGHT = 48; // irl measurement
+#define PI 3.14159265
 
 double calculateDistance(double heightPixels)
 {
