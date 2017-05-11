@@ -59,7 +59,11 @@ Below I outline how to use it on a windows machine in Eclipse for development pu
 
 ## Authors
 
-**Stephen Stockman** - ThunderChicken Programmer 2014-2016
+**Stephen Stockman** 
+- ThunderChicken Programmer 2014-2016
+- ThunderChicken Alumni 2017-FOREVER
+- shstock@umich.edu
+- 586-899-5201
  
 ## Acknowledgments
 
