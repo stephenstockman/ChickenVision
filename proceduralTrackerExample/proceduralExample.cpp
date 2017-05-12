@@ -1,7 +1,7 @@
-#include "HSVThresh.h"
-#include "Smoothing.h"
-#include "Tracking.h"
-#include "VisionProcessing.h"
+#include "ChickenVision/HSVThresh.h"
+#include "ChickenVision/Smoothing.h"
+#include "ChickenVision/Tracking.h"
+#include "ChickenVision/VisionProcessing.h"
 
 using namespace cv;
 using namespace std;
