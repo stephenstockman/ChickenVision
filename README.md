@@ -37,8 +37,8 @@ Video of setup by some guy on YouTube in case you want it <link> <https://www.yo
 * Open Eclipse adn File-> import-> existing project into workspace. For root director selct the mybuild folder you just generated and make sure the box with the project name is checked. Also ensure all of the Options and Working set boxes are unchecked.
 * Wait for the c++ indexer to finish(lower right hand corner should take a couple minutes) then left click the project and select Build all, this will take a long time(30 minutes-1 hour).
 * Then right click the imported project Build Targets-> Build scroll to the bottom-> :install. This will create the opencv/mybuild/install/ folder and files.
+* Next set the env var for lib and bin- System->Advanced System Settings->Environment Variables. Go to System variables and double click PATH->New-> and add C:\...\opencv\newbuild\install\x64\mingw\bin. Then do it again for C:\...\opencv\newbuild\install\x64\mingw\lib.
 * Congradulations you are done with the setup time to make a new project(go to Development/Testing->Windows Eclipse found below). After restarting your computer, you can start coding in OpenCV! Next we will outline how to get the code from here into your project.
-*  TODO: Talk about setting env var for DIR
 
 ### Setup on Raspberry Pi
 
